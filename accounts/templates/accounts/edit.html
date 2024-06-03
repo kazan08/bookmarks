@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Редактирование аккаунта{% endblock %}
+{% block content %}
+    <div class="edit">
+        <h1>Редактирование аккаунта</h1>
+        <p>Вы можете редактировать аккаунт по данной форме:</p>
+        <form method="post" enctype="multipart/form-data" class="edit-form">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Сохранить"></p>
+        </form>
+    </div>
+{% endblock %}

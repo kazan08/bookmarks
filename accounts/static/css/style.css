@@ -1,0 +1,197 @@
+html, body {
+    font-family: 'Arial';
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    color: #444;
+}
+
+body {
+    background-color: #fff;
+}
+
+#header {
+	background: #00FF7F;
+	height: 60px;
+}
+
+ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: white;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+span.logo {
+    margin: 18px 8px 0 40px;
+    float: left;
+    font-size: 20px;
+    margin-right: 20%;
+    color: white;
+}
+
+ul.mainmenu li {
+    float: left;
+    margin: 18px 8px 0 40px;
+}
+
+ul.mainmenu li a {
+	color: white;
+	text-decoration: none;
+}
+
+ul.mainmenu span.user{
+    margin: 18px 8px 0 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    float: right;
+}
+
+ul.mainmenu span.user button.login-url {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+a.login-url {
+    margin: 18px 8px 0 40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+ul.mainmenu span.user .login-url:hover {color:#212121;}
+
+ul.mainmenu li a:hover {
+	color:  #212121;
+}
+
+#content{
+    margin-left: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.login-form {
+    padding: 50px;
+    position: fixed; top: 10%; left: 10%;
+    -webkit-transform: translate(-10%, -10%);
+    -ms-transform: translate(-10%, -10%);
+    transform: translate(-10%, -10%)
+}
+
+hr {
+    color: gray;
+    width: 98%;
+}
+
+.login-form p {
+    font-size: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 2px;
+    width: 75px;
+    height: 38px;
+    font-size: 20px;
+    text-allign: center:
+}
+
+.login-form input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.login-form p a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #4CAF50;
+}
+
+.login-form p a:hover {
+    color: #45a049;
+}
+
+.register {
+    padding: 50px;
+    position: fixed; top: 10%; left: 10%;
+    -webkit-transform: translate(-10%, -10%);
+    -ms-transform: translate(-10%, -10%);
+    transform: translate(-10%, -10%)
+    font-size: 16px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.register-form input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 2px;
+    width: 196px;
+    height: 34px;
+    font-size: 20px;
+    text-allign: center:
+}
+
+.register-form input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.edit {
+    padding: 50px;
+    position: fixed; top: 10%; left: 10%;
+    -webkit-transform: translate(-10%, -10%);
+    -ms-transform: translate(-10%, -10%);
+    transform: translate(-10%, -10%)
+    font-size: 16px;
+}
+
+.edit-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-form input[type=file] {border: none;}
+
+.edit-form input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 2px;
+    width: 118px;
+    height: 36px;
+    font-size: 20px;
+    text-allign: center:
+}
+
+.edit-form input[type=submit]:hover {
+    background-color: #45a049;
+}

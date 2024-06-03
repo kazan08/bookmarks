@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Социальный веб сайт{% endblock %}</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+    <div id="header">
+        <span class="logo">Bookmarks</span>
+        {% if request.user.is_authenticated %}
+        <ul class="mainmenu">
+            <li {% if section == 'dashboard' %} class="selected" {% endif %}>
+                <a href="{% url 'dashboard' %}">Управление</a>
+            </li>
+            <li {% if section == 'images' %}class="selected"{% endif %}>
+                <a href="#">Изображения</a>
+            </li>
+            <li {% if section == "people" %}class="selected"{% endif %}>
+                <a href="#">Люди</a>
+            </li>
+        {% endif %}
+            <span class="user">
+                {% if request.user.is_authenticated %}
+                    Привет {{ request.user.first_name|default:request.user.username }}!
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="login-url">Выйти</button>
+                    </form>
+                    <!--<a href="{% url 'logout' %}" class="login-url">Выйти</a>-->
+                {% else %}
+                    <a href="{% url 'login' %}" class="login-url">Войти</a>
+                {% endif %}
+            </span>
+        </ul>
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {{ message|safe }}
+                <a href="#" class="close">x</a>
+            </li>
+            {% endfor %}
+        </ul>
+ {% endif %}
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
