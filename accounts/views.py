@@ -1,7 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 
@@ -59,6 +60,8 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+
+            # Сообщить об успешном обновлении профиля.
             messages.success(request, 'Профиль обновлён успешно')
         else:
             messages.error(request, 'Ошибка обновления профиля')

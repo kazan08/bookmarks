@@ -25,6 +25,12 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Пароли не совпадают.')
         return cd['password2']
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError('Этот адрес электронной почты уже занят.')
+        return data
+
 
 class UserEditForm(forms.ModelForm):
     class Meta:
@@ -38,3 +44,11 @@ class ProfileEditForm(forms.ModelForm):
 
         model = Profile
         fields = ['date_of_birth', 'photo']
+
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        qs = User.objects.exclude(id=self.instance.id) \
+            .filter(email=data)
+        if qs.exists():
+            raise forms.ValidationError('Этот адрес электронной почты уже занят.')
+        return data
